@@ -1,0 +1,9 @@
+<div>
+  <%= form_for @item do |f| %>
+    <div class="field">
+      <%= f.label :sku %><br />
+      <%= f.text_field :sku %>
+    </div>
+    <%= f.submit "Save" %>
+  <% end %>
+</div>
