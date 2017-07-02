@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170701235837) do
+ActiveRecord::Schema.define(version: 20170702004114) do
+
+  create_table "item_fields", force: :cascade do |t|
+    t.string   "field_type"
+    t.boolean  "required"
+    t.integer  "item_type_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+  end
+
+  add_index "item_fields", ["item_type_id"], name: "index_item_fields_on_item_type_id"
 
   create_table "item_types", force: :cascade do |t|
     t.string   "name"

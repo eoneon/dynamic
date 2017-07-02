@@ -6,6 +6,7 @@ class ItemTypesController < ApplicationController
   end
 
   def show
+    @item_type = ItemType.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class ItemTypesController < ApplicationController
   end
 
   def edit
+    @item_type = ItemType.find(params[:id])
   end
 
   def create
@@ -54,7 +56,8 @@ class ItemTypesController < ApplicationController
 
   private
 
+  #https://stackoverflow.com/questions/18436741/rails-4-strong-parameters-nested-objects
   def item_type_params
-    params.require(:item_type).permit(:name)
+    params.require(:item_type).permit(:name, {:fields_attributes => [:field_type, :name, :required]})
   end
 end
