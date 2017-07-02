@@ -1,9 +1,15 @@
-<div>
-  <%= form_for @item do |f| %>
-    <div class="field">
-      <%= f.label :sku %><br />
-      <%= f.text_field :sku %>
-    </div>
-    <%= f.submit "Save" %>
+<%= form_for @item do |f| %>
+
+  <%= f.hidden_field :item_type_id %>
+
+  <div class="field">
+    <%= f.label :sku %><br />
+    <%= f.text_field :sku %>
+  </div>
+
+  <!-- dynamic fields -->
+  <%= f.fields_for :properties do %>
+    <% @item.item_type.fields.each do |field| %>
   <% end %>
-</div>
+  <%= f.submit "Save" %>
+<% end %>
