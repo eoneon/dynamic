@@ -1,6 +1,17 @@
 <h1>Items#index</h1>
-<div>
-  <% @items.each do |item| %>
-    <%= item.name %>
-  <% end %>
+
+<% if @items.empty? %>
+  <p><strong>No Items</strong></p>
+<% end %>
+
+
+<% @items.each do |item| %>
+<div class="item">
+  <h2><%= item.name %></h2>
 </div>
+<% end %>
+
+<%= form_tag new_item_path, method: :get do %>
+  <%= select_tag :product_type_id, options_from_collection_for_select(ItemType.all, :id, :name) %>
+  <%= submit_tag "New Item", name: nil %>
+<% end %>
