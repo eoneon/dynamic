@@ -58,6 +58,6 @@ class ItemTypesController < ApplicationController
 
   #https://stackoverflow.com/questions/18436741/rails-4-strong-parameters-nested-objects
   def item_type_params
-    params.require(:item_type).permit(:name, {:fields_attributes => [:field_type, :name, :required]})
+    params.require(:item_type).permit(:name, { :fields_attributes => [:field_type, :name, :required] })
   end
 end

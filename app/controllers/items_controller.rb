@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new(item_type_id: params[:id])
+    @item = Item.new(item_type_id: params[:item_type_id])
   end
 
   def create
@@ -55,6 +55,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:sku)
+    params.require(:item).permit(:sku, :properties)
   end
 end
