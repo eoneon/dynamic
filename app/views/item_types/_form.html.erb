@@ -1,15 +1,4 @@
 <%= form_for(@item_type) do |f| %>
-  <% if @item_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item_type.errors.count, "error") %> prohibited this item_type from being saved:</h2>
-
-      <ul>
-      <% @item_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -25,8 +14,5 @@
 
   <!-- this is a helper method for adding more fields  -->
   <%= link_to_add_fields "Add Field", f, :fields %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit "Save" %>
 <% end %>
