@@ -7,7 +7,7 @@
 
 <% @items.each do |item| %>
 <div class="item">
-  <h2><%= item.sku %></h2>
+  <h2><%= item.sku %></h2><%= link_to 'Edit', edit_item_path(item) %>
 </div>
 <% end %>
 
