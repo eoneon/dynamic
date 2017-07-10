@@ -216,6 +216,13 @@ CREATE INDEX index_items_on_item_type_id ON items USING btree (item_type_id);
 
 
 --
+-- Name: items_parameters; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX items_parameters ON items USING gin (parameters);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -257,4 +264,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170702165711');
 INSERT INTO schema_migrations (version) VALUES ('20170708015329');
 
 INSERT INTO schema_migrations (version) VALUES ('20170709221031');
+
+INSERT INTO schema_migrations (version) VALUES ('20170710004505');
 
