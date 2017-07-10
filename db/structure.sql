@@ -123,7 +123,8 @@ CREATE TABLE items (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     item_type_id integer,
-    properties text
+    properties text,
+    parameters hstore
 );
 
 
@@ -254,4 +255,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170702004114');
 INSERT INTO schema_migrations (version) VALUES ('20170702165711');
 
 INSERT INTO schema_migrations (version) VALUES ('20170708015329');
+
+INSERT INTO schema_migrations (version) VALUES ('20170709221031');
 

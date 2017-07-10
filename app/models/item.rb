@@ -1,4 +1,4 @@
 class Item < ActiveRecord::Base
   belongs_to :item_type
-  serialize :properties, Hash 
+  serialize :parameters, Hash 
 end

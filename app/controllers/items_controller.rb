@@ -60,9 +60,9 @@ class ItemsController < ApplicationController
     #syntax error, unexpected ',', expecting => ...type_id, :properties => {:name, :leg_count}) ... ^
     #params.require(:item).permit(:sku, :item_type_id, :properties => {:name, :leg_count})
     #https://stackoverflow.com/questions/19172893/rails-hashes-with-unknown-keys-and-strong-parameters
-    properties = params[:item].delete(:properties)
+    parameters = params[:item].delete(:parameters)
     params.require(:item).permit(:sku, :item_type_id).tap do |whitelisted|
-       whitelisted[:properties] = properties
+       whitelisted[:parameters] = parameters
      end
   end
 end
